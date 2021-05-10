@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <title>Panier - Orinoco</title>
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6b4d637310.js" crossorigin="anonymous"></script> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <div id="enTete">
+            <h1>Orinoco</h1>
+            <a href="" class="fas fa-shopping-cart"></a>
+        </div>
+
+    </header>
+
+    <h1 id="TitrePanier">Récapitualtif de votre commande</h1>
+
+    <h2 class="TitrePanierBis">Votre panier</h2>
+
+    <table id="ListePanier">
+
+        <tr class="lignetype">
+            <th>Modèle</th>
+            <th>Lentille</th> 
+            <th>Quantité</th> 
+            <th>Prix</th> 
+        </tr> 
+
+        <!-- <tr class="lignetype"> -->
+            <!-- <td id="tdname">Nom</td> -->
+            <!-- <td id="tdlense">Lentille</td> -->
+            <!-- <td id="tdquantity">Quantité</td> -->
+            <!-- <td id="tdprice">Prix</td> -->
+        <!-- </tr> -->
+
+    </table> 
+
+
+    <h2 class="TitrePanierBis">Vos coordonnées</h2>
+    <p class="précision">Tous les champs sont obligatoires</p>
+
+    <div id="forms">
+        
+    <div id="allforms">
+
+        <div class="formulaireType">
+            <label for="Nom">Nom</label>
+            <input type="text" name="Nom" id="Nom" class="formform" required>
+        </div>
+
+        <div class="formulaireType">
+            <label for="Prénom">Prénom</label>
+            <input type="text" name="Prénom" id="Prénom" class="formform" required>
+        </div>
+
+        <div class="formulaireType">
+            <label for="Adresse">Adresse</label>
+            <input type="text" name="Adresse" id="Adresse" class="formform" required>
+        </div>
+
+        <div class="formulaireType">
+            <label for="CodePostale">Code postale</label>
+            <input type="text" name="CodePostale" id="CodePostale" class="formform" required>
+        </div>
+
+        <div class="formulaireType">
+            <label for="Ville">Ville</label>
+            <input type="text" name="Ville" id="Ville" class="formform" required>
+        </div>
+
+        <div class="formulaireType">
+            <label for="eMail">eMail</label>
+            <input type="text" name="eMail" id="eMail" class="formform" required>
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <footer>
+
+        <a class="foottxt" href="">Mentions légales</a>
+        <div id="footlogos">
+            <a class="fab fa-facebook-f logo" href=""></a>
+            <a class="fab fa-twitter logo" href=""></a>
+            <a class="fab fa-instagram logo" href=""></a>
+            <a class="fab fa-pinterest logo" href=""></a>
+        </div>
+        <a class="foottxt" href="">Contact</a>
+
+    </footer>
+
+    <script src="panier.js"></script>
+    
+</body>
