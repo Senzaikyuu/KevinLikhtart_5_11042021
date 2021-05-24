@@ -28,7 +28,7 @@ let storedCameras = JSON.parse(localStorage.getItem('newArticle'));
 
     // Contenu des balises //
 
-                tdname.textContent = camera.name;
+                tdname.textContent = storredCameras.camera.name;
                 tdlense.textContent = camera.lenses;
                 tdquantity.textContent =
                 tdprice.textContent = camera.price / 100 + " €";

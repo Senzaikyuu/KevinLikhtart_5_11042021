@@ -85,6 +85,40 @@ const getAllCameras = async function() {
                 selectOption.setAttribute("value", lenses[i]);
             }
 
+
+            ajoutPanier.addEventListener("click", function (event) {
+                event.preventDefault();
+
+            // stockage des données du/des teddy souhaité dans localStorage
+
+                let cameraChosen = [camera.imageUrl, camera._id, camera.name, camera.price, parseInt(productQuantity.value, 10)]
+
+                let cart = JSON.parse(localStorage.getItem('cart'));
+                
+                if(cart) {
+                    let existProduct = 0;
+                    cart.forEach(element => {
+                        if (element[1] == id) {
+                            element[4] += parseInt(productQuantity.value, 10);
+                            existProduct = 1;
+                        }     
+                    });
+
+                    if (existProduct == 0) {
+                        cart.push(cameraChosen);
+                    }
+
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    
+                } else {
+                    
+                    cart = [];
+                    cart.push(cameraChosen);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    console.log(cart);
+                }
+            });
+            window.location.href = "panier.html";
         } else {
             console.error('Retour du serveur : ', response.status);
             alert('Erreur rencontrée : ' + response.status);
@@ -97,46 +131,5 @@ const getAllCameras = async function() {
 getAllCameras();
 
 
-
-let inputBuy = document.getElementsByClassName("ajoutPanier");
-console.log(inputBuy);
-console.log(inputBuy.length);
-            // récupérations données et envoie au panier
-
-            inputBuy.addEventListener("click", async function () {
-                const ajout = await getAllCameras();
-                storedCameras.push(ajout);
-                localStorage.setItem("panier", JSON.stringify(storedCameras));
-                alert("Cet article a été ajouté dans votre panier");
-                location.reload();
-            });
-
-            // stockage des données dans localStorage
-                console.log(productQuantity.value)
-            let cameraChosen = [camera.imageUrl, camera.name, camera.price / 100 + " €", productQuantity.value]
-                
-            let storedCameras = JSON.parse(localStorage.getItem('newArticle', cameraChosen));
-                const cameraQuantity = productQuantity.value;
-                if(storedCameras) {
-                    storedCameras.push(cameraChosen);
-                    localStorage.setItem('newArticle', JSON.stringify(storedCameras));
-            
-                    if (window.confirm(camera.name + " " + cameraQuantity + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
-                        window.location.href = "panier.html";
-                    } else {
-                        window.location.href = "index.html";
-                    }
-                } else {
-                    storedCameras = [];
-                    storedCameras.push(cameraChosen);
-                    localStorage.setItem('newArticle', JSON.stringify(storedCameras));
-                    
-                    if (window.confirm(camera.name + " " + cameraQuantity + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
-                        window.location.href = "panier.html";
-                    } else {
-                        window.location.href = "index.html";
-                    }
-                }
-            
 
 
